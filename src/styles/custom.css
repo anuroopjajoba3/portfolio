@@ -1,0 +1,39 @@
+/* Smooth natural scrolling */
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100%;
+}
+
+#root {
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Critical: Allow scroll events to pass through all elements */
+* {
+  /* This ensures scrolling works everywhere */
+  overscroll-behavior-y: auto;
+}
+
+/* Make sure sections don't block scrolling */
+section {
+  position: relative;
+}
+
+/* Allow scrolling through all divs */
+div:not(button):not(a) {
+  /* Allows scroll events to pass through */
+  touch-action: pan-y pan-x;
+}
